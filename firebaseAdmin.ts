@@ -12,7 +12,7 @@ let app: App;
 
 if (getApps().length === 0) {
   app = initializeApp({
-    credential: cert(serviceKey),
+    credential: cert(JSON.parse(serviceKey)),
   });
 } else {
   app = getApp();
