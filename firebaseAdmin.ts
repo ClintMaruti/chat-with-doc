@@ -2,7 +2,11 @@ import { initializeApp, getApp, getApps, App, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
 import { getStorage } from "firebase-admin/storage";
 
-const serviceKey = require("./service_key.json");
+const serviceKey = process.env.SERVICE_KEY;
+
+if (!serviceKey) {
+  throw new Error(`Firebase service key is missing!`);
+}
 
 let app: App;
 
