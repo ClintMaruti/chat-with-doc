@@ -24,25 +24,28 @@ export default function FileUploader() {
     }
   }, [fileId, router]);
 
-  const onDrop = useCallback(async (acceptedFiles: File[]) => {
-    // Do something with the files
-    const file = acceptedFiles[0];
-    if (file) {
-      if (!isOverFileLimit && !filesloading) {
-        await handleUpload(file);
+  const onDrop = useCallback(
+    async (acceptedFiles: File[]) => {
+      // Do something with the files
+      const file = acceptedFiles[0];
+      if (file) {
+        if (!isOverFileLimit && !filesloading) {
+          await handleUpload(file);
+        } else {
+          toast({
+            variant: "destructive",
+            title: "Free Plan File Limit Reached",
+            description:
+              "You have reached the maximum number of files allowed for your account. Please upgrade to add more documents.",
+          });
+        }
       } else {
-        toast({
-          variant: "destructive",
-          title: "Free Plan File Limit Reached",
-          description:
-            "You have reached the maximum number of files allowed for your account. Please upgrade to add more documents.",
-        });
+        // do nothing...
+        // toast...
       }
-    } else {
-      // do nothing...
-      // toast...
-    }
-  }, []);
+    },
+    [handleUpload, isOverFileLimit, filesloading, toast]
+  );
   const statusIcons: {
     [key in StatusText]: JSX.Element;
   } = {
