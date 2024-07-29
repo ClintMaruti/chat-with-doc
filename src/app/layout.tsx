@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Chat With Doc",
+  title: "JuaDocs",
   description:
     "An app that enables users to chat with their uploaded documents",
 };

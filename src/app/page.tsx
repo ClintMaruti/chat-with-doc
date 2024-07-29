@@ -55,6 +55,15 @@ export default function Home() {
       <div className="bg-white py-24 sm:py-32 rounded-md drop-shadow-xl">
         <div className="flex flex-col justify-center items-center mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl sm:text-center">
+            <div className="mx-auto max-w-2xl sm:text-center">
+              <Image
+                alt="Logo"
+                src="/assets/logo.png"
+                width={600}
+                height={600}
+                className="mx-auto max-w-2xl"
+              />
+            </div>
             <h2 className="text-base font-semibold leading-7 text-indigo-600">
               Your interactive document companion
             </h2>
@@ -84,7 +93,7 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <Image
               alt="App screenshot"
-              src="/assets/image1.jpeg"
+              src="/assets/screen-shot.png"
               width={2432}
               height={1442}
               className="mb-[-0%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
